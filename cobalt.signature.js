@@ -1,12 +1,11 @@
 (function(cobalt){
     var plugin={
-        name:"signature",
-        init:function(){
-            //create shortcuts
-            cobalt.signature=this.sign.bind(this);
+        classes: {
+        	ios: 'SignaturePlugin',
+			android:'io.kristal.signature.Signature'
         },
-        handleEvent:function(json){
-            cobalt.log(this.name, ' plugin : unknown event received :', json)
+        init:function(){
+            cobalt.signature=this.sign.bind(this);
         },
         sign:function(option,callback){
             cobalt.plugins.send(this, "sign",option, callback);
