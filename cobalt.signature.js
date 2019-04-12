@@ -9,10 +9,7 @@
             cobalt.log(this.name, ' plugin : unknown event received :', json)
         },
         sign:function(option,callback){
-            this.send("sign",option, callback);
-         },
-        send:function(action, data, callback){
-        cobalt.send({ type : "plugin", name : this.name, action : action, data : data }, callback);
+            cobalt.plugins.send(this, "sign",option, callback);
         }
     };
     cobalt.plugins.register(plugin);
