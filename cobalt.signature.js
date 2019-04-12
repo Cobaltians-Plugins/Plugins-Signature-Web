@@ -1,18 +1,9 @@
 (function(cobalt){
     var plugin={
         name:"signature",
-
-        init:function(options){
+        init:function(){
             //create shortcuts
             cobalt.signature=this.sign.bind(this);
-
-            if (options){
-                this.config(options);
-            }
-
-        },
-        config:function(settings){
-
         },
         handleEvent:function(json){
             cobalt.log(this.name, ' plugin : unknown event received :', json)
