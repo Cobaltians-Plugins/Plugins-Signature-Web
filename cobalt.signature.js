@@ -1,5 +1,6 @@
 (function(cobalt) {
   var plugin = {
+    name: 'CobaltSignaturePlugin',
     classes: {
       ios: 'SignaturePlugin',
       android: 'io.kristal.signature.Signature'
