@@ -8,14 +8,8 @@
     init: function() {
       cobalt.signature = this.sign.bind(this);
     },
-    sign: function(callback) {
-      this.onSignatureResult = callback;
-      cobalt.plugins.send(this, "sign");
-    },
-    handleEvent: function(json) {
-      if (typeof this.onSignatureResult === 'function') {
-        this.onSignatureResult(json.data)
-      }
+    sign: function(params, callback) {
+      cobalt.plugins.send(this, "sign", params, callback);
     }
   };
   cobalt.plugins.register(plugin);
